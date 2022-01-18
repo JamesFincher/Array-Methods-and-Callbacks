@@ -130,6 +130,11 @@ function getWinnersByYear(array, getFinals, GetYears, GetWinners) {
     // console.log(finals.length)
     // let years = cbGetYears(array)
     // console.log
+    for (let i = 0; i < winners.length; i++) {
+        returnArr.push(`In ${years[i]}, ${winners[i]} won the world cup!`)
+    }
+    console.log(returnArr)
+    return returnArr
 }
 
 
