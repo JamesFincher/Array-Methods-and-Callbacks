@@ -44,10 +44,10 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(array, cb) {
-    let retArr = cb(array)
+    let years = cb(array)
     // console.log(retArr)
-    retArr = retArr.map(function (item) { return item.Year })
-    return retArr
+    years = years.map(function (item) { return item.Year })
+    return years
 }
 
 //Below Works
