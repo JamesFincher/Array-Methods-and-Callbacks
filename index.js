@@ -120,7 +120,7 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(array, getFinals, GetYears, GetWinners) {
+function getWinnersByYear(array, getFinals) {
     let returnArr = []
     let finals = getFinals(array, getWinners)
     let years = getYears(array, getFinals)
@@ -136,6 +136,7 @@ function getWinnersByYear(array, getFinals, GetYears, GetWinners) {
     // console.log(returnArr)
     return returnArr
 }
+console.log(getWinnersByYear(fifaData, getFinals))
 
 
 // console.log(getWinnersByYear(fifaData, getFinals, getWinnersByYear, getWinners)
