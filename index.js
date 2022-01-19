@@ -133,12 +133,14 @@ function getWinnersByYear(array, getFinals, GetYears, GetWinners) {
     for (let i = 0; i < winners.length; i++) {
         returnArr.push(`In ${years[i]}, ${winners[i]} won the world cup!`)
     }
-    console.log(returnArr)
+    // console.log(returnArr)
     return returnArr
 }
 
 
-console.log(getWinnersByYear(fifaData, getFinals, getWinnersByYear, getWinners))
+// console.log(getWinnersByYear(fifaData, getFinals, getWinnersByYear, getWinners)
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
  1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
@@ -149,12 +151,43 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
+function getAverageGoals(getFinals) {
+
+    let dataPool = getFinals
+    let aveNumsHome = []
+    let aveNumsAway = []
+    let returnArr = []
+    let returnAverage = 0
+    aveNumsHome = dataPool.reduce(function (acc, item) {
+        return acc + item['Home Team Goals']
+
+    }, 0)
+    returnArr.push((aveNumsHome / dataPool.length).toFixed(2))
+    // console.log(returnArr)
+
+    aveNumsAway = dataPool.reduce(function (acc, item) {
+        return acc + item['Away Team Goals']
+
+    }, 0)
+    // console.log(aveNumsAway)
+    returnArr.push((aveNumsAway / dataPool.length).toFixed(2))
+    // console.log(returnArr)
+    returnAverage = (parseFloat(returnArr[0]) + parseFloat(returnArr[1]))
+    let returnMe = []
+    return `${returnAverage}`
+    console.log(returnMe)
+
+    return returnMe
+
+
+
+    // console.log(dataPool.length)
     /* code here */
+
 }
 
 
-
+console.log(getAverageGoals(getFinals(fifaData)))
 
 /// 🥅 STRETCH 🥅 ///
 
